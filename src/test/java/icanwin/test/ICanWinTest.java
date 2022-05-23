@@ -14,7 +14,6 @@ public class ICanWinTest extends EnterAllInfoTest {
         Assert.assertEquals(actualPageTitle, NEW_PASTE_TITLE, "Submitted paste title doesn't match initial paste title");
     }
 
-
     @Test(description = "Check if submitted paste text matches initial text")
     public void checkSubmittedPasteText() {
         String actualText = pastebinSubmittedPage.getSubmittedPasteText();
