@@ -28,7 +28,7 @@ public class ICanWinTest {
         driver.manage().window().maximize();
     }
 
-    @Test(description = "Enter all infor for ICanWinTest")
+    @Test(description = "Enter all info for ICanWinTest")
     public void enterAllNeededInfo() {
         pasteBinMainPage = new PasteBinMainPage(driver)
                 .openPage()
