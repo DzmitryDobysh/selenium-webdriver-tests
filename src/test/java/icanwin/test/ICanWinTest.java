@@ -29,7 +29,7 @@ public class ICanWinTest {
     }
 
     @Test(description = "Enter all infor for ICanWinTest")
-    public void enterAllNeededInfo(){
+    public void enterAllNeededInfo() {
         pasteBinMainPage = new PasteBinMainPage(driver)
                 .openPage()
                 .typeInNewPasteText(NEW_PASTE_TEXT)
@@ -37,10 +37,6 @@ public class ICanWinTest {
                 .selectExpiration10M()
                 .typeInNewPasteTitle(NEW_PASTE_TITLE)
                 .submitNewPaste();
-    }
-
-    public WebElement waitForElement(By by) {
-        return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     @AfterTest(alwaysRun = true)
