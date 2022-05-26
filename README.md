@@ -8,7 +8,8 @@ https://elearn.epam.com/courses/course-v1:EPAM+WD+ext1/course/
 1. Открыть https://pastebin.com или аналогичный сервис в любом браузере
 2. Создать New Paste со следующими деталями:
 
-* Код: "Hello from WebDriver"
+* Код:
+```"Hello from WebDriver"```
 
 * Paste Expiration: "10 Minutes"
 
@@ -22,11 +23,11 @@ https://elearn.epam.com/courses/course-v1:EPAM+WD+ext1/course/
 2. Создать New Paste со следующими деталями:
 
 * Код:
-
-       git config --global user.name  "New Sheriff in Town"
-       git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
-       git push origin master --force
-
+```
+git config --global user.name  "New Sheriff in Town"
+git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
+git push origin master --force
+```
 * Syntax Highlighting: "Bash"
 
 * Paste Expiration: "10 Minutes"
