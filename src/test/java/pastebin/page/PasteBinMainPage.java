@@ -1,4 +1,4 @@
-package icanwin.page;
+package pastebin.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +20,11 @@ public class PasteBinMainPage extends BasePage {
 
     @FindBy(xpath = "//button[@type='submit']")
     WebElement buttonNewPaste;
+
+    @FindBy(id = "select2-postform-format-container")
+    WebElement syntaxDropdown;
+    @FindBy(xpath = "//li[text()='Bash']")
+    WebElement syntaxBash;
 
     public PasteBinMainPage(WebDriver driver) {
         super(driver);
@@ -52,6 +57,16 @@ public class PasteBinMainPage extends BasePage {
 
     public PasteBinMainPage submitNewPaste() {
         buttonNewPaste.click();
+        return this;
+    }
+
+    public PasteBinMainPage openSyntaxDropdown() {
+        syntaxDropdown.click();
+        return this;
+    }
+
+    public PasteBinMainPage selectSyntaxBash() {
+        syntaxBash.click();
         return this;
     }
 }

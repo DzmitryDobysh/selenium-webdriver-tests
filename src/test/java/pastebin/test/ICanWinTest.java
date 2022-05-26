@@ -1,17 +1,11 @@
-package icanwin.test;
+package pastebin.test;
 
-import icanwin.page.PasteBinMainPage;
-import org.openqa.selenium.By;
+import pastebin.page.PasteBinMainPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class ICanWinTest {
 
@@ -19,7 +13,6 @@ public class ICanWinTest {
 
     protected static final String NEW_PASTE_TEXT = "Hello from WebDriver";
     protected static final String NEW_PASTE_TITLE = "helloweb";
-    protected static final String SUBMITTED_PASTE_TITLE_LOCATOR = "//div[@class='info-top']/h1";
     PasteBinMainPage pasteBinMainPage;
 
     @BeforeTest(alwaysRun = true)
@@ -29,7 +22,7 @@ public class ICanWinTest {
     }
 
     @Test(description = "Enter all info for ICanWinTest")
-    public void enterAllNeededInfo() {
+    public void enterAllNeededInfoSimple() {
         pasteBinMainPage = new PasteBinMainPage(driver)
                 .openPage()
                 .typeInNewPasteText(NEW_PASTE_TEXT)

@@ -1,4 +1,4 @@
-package icanwin.page;
+package pastebin.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
