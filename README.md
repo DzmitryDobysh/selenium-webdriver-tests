@@ -18,14 +18,14 @@ https://elearn.epam.com/courses/course-v1:EPAM+WD+ext1/course/
 
 При выполнении задания необходимо использовать возможности Selenium WebDriver, юнит-тест фреймворка и концепцию Page Object. Автоматизировать следующий сценарий:
 
-    Открыть https://pastebin.com  или аналогичный сервис в любом браузере
-    Создать New Paste со следующими деталями:
+Открыть https://pastebin.com  или аналогичный сервис в любом браузере
+Создать New Paste со следующими деталями:
 
 * Код:
 
-git config --global user.name  "New Sheriff in Town"
-git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
-git push origin master --force
+       git config --global user.name  "New Sheriff in Town"
+       git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
+       git push origin master --force
 
 * Syntax Highlighting: "Bash"
 
