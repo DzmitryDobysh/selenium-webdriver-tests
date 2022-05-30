@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PasteBinMainPage extends BasePage {
+public class PasteBinMainPagePasteBin extends PasteBinBasePage {
     private final String BASE_URL = "https://pastebin.com";
 
     @FindBy(id = "postform-text")
@@ -26,46 +26,46 @@ public class PasteBinMainPage extends BasePage {
     @FindBy(xpath = "//li[text()='Bash']")
     WebElement syntaxBash;
 
-    public PasteBinMainPage(WebDriver driver) {
+    public PasteBinMainPagePasteBin(WebDriver driver) {
         super(driver);
     }
 
-    public PasteBinMainPage openPage() {
+    public PasteBinMainPagePasteBin openPage() {
         driver.get(BASE_URL);
         return this;
     }
 
-    public PasteBinMainPage typeInNewPasteText(String newPasteText) {
+    public PasteBinMainPagePasteBin typeInNewPasteText(String newPasteText) {
         waitForWebElementVisible(textAreaNewPaste).sendKeys(newPasteText);
         return this;
     }
 
-    public PasteBinMainPage openExpirationDropdown() {
+    public PasteBinMainPagePasteBin openExpirationDropdown() {
         expirationDropdown.click();
         return this;
     }
 
-    public PasteBinMainPage selectExpiration10M() {
+    public PasteBinMainPagePasteBin selectExpiration10M() {
         expiration10M.click();
         return this;
     }
 
-    public PasteBinMainPage typeInNewPasteTitle(String newPasteTitle) {
+    public PasteBinMainPagePasteBin typeInNewPasteTitle(String newPasteTitle) {
         inputTitle.sendKeys(newPasteTitle);
         return this;
     }
 
-    public PasteBinMainPage submitNewPaste() {
+    public PasteBinMainPagePasteBin submitNewPaste() {
         buttonNewPaste.click();
         return this;
     }
 
-    public PasteBinMainPage openSyntaxDropdown() {
+    public PasteBinMainPagePasteBin openSyntaxDropdown() {
         syntaxDropdown.click();
         return this;
     }
 
-    public PasteBinMainPage selectSyntaxBash() {
+    public PasteBinMainPagePasteBin selectSyntaxBash() {
         syntaxBash.click();
         return this;
     }

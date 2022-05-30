@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public abstract class BasePage {
+public abstract class PasteBinBasePage {
     protected WebDriver driver;
 
     protected final Duration WAIT_TIMEOUT_SECONDS = Duration.ofSeconds(30);
 
-    protected BasePage(WebDriver driver) {
+    protected PasteBinBasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

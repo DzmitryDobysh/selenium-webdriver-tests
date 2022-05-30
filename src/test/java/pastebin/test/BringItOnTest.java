@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pastebin.page.PasteBinMainPage;
-import pastebin.page.PastebinSubmittedPastePage;
+import pastebin.page.PasteBinMainPagePasteBin;
+import pastebin.page.PastebinSubmittedPastePagePasteBin;
 
 import java.time.Duration;
 
@@ -24,8 +24,8 @@ public class BringItOnTest {
     protected static final String NEW_PASTE_TITLE = "how to gain dominance among developers";
     protected static final String SUBMITTED_PASTE_TITLE_LOCATOR = "//div[@class='info-top']/h1";
     protected static final String EXPECTED_PASTE_SYNTAX = "Bash";
-    PasteBinMainPage pasteBinMainPage;
-    PastebinSubmittedPastePage pastebinSubmittedPastePage;
+    PasteBinMainPagePasteBin pasteBinMainPage;
+    PastebinSubmittedPastePagePasteBin pastebinSubmittedPastePage;
 
     @BeforeTest(alwaysRun = true)
     public void browserSetup() {
@@ -35,7 +35,7 @@ public class BringItOnTest {
 
     @Test(description = "Enter all info for BringItOnTest", groups = "main")
     public void enterAllNeededInfoExtended() {
-        pasteBinMainPage = new PasteBinMainPage(driver)
+        pasteBinMainPage = new PasteBinMainPagePasteBin(driver)
                 .openPage()
                 .typeInNewPasteText(NEW_PASTE_TEXT)
                 .openSyntaxDropdown()
@@ -44,7 +44,7 @@ public class BringItOnTest {
                 .selectExpiration10M()
                 .typeInNewPasteTitle(NEW_PASTE_TITLE)
                 .submitNewPaste();
-        pastebinSubmittedPastePage = new PastebinSubmittedPastePage(driver);
+        pastebinSubmittedPastePage = new PastebinSubmittedPastePagePasteBin(driver);
     }
 
     @Test(description = "Check if submitted paste title matches initial paste title", dependsOnGroups = "main")

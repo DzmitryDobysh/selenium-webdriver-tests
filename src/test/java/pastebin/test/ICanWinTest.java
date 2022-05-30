@@ -1,6 +1,6 @@
 package pastebin.test;
 
-import pastebin.page.PasteBinMainPage;
+import pastebin.page.PasteBinMainPagePasteBin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -13,7 +13,7 @@ public class ICanWinTest {
 
     protected static final String NEW_PASTE_TEXT = "Hello from WebDriver";
     protected static final String NEW_PASTE_TITLE = "helloweb";
-    PasteBinMainPage pasteBinMainPage;
+    PasteBinMainPagePasteBin pasteBinMainPage;
 
     @BeforeTest(alwaysRun = true)
     public void browserSetup() {
@@ -23,7 +23,7 @@ public class ICanWinTest {
 
     @Test(description = "Enter all info for ICanWinTest")
     public void enterAllNeededInfoSimple() {
-        pasteBinMainPage = new PasteBinMainPage(driver)
+        pasteBinMainPage = new PasteBinMainPagePasteBin(driver)
                 .openPage()
                 .typeInNewPasteText(NEW_PASTE_TEXT)
                 .openExpirationDropdown()
