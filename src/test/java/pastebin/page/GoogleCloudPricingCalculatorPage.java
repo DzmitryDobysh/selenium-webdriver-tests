@@ -69,8 +69,17 @@ public class GoogleCloudPricingCalculatorPage extends GoogleCloudBasePage {
     @FindBy(xpath = "//h2/b[@class='ng-binding']")
     WebElement textTotalCost;
 
+    @FindBy(xpath = "//button[@aria-label='Email Estimate']")
+    WebElement buttonEmailEstimate;
+
+    @FindBy(xpath = "//input[@ng-model='emailQuote.user.email']")
+    WebElement inputEmail;
+
+    @FindBy(xpath = "//button[@aria-label='Send Email']")
+    WebElement buttonSendEmail;
 
     public GoogleCloudPricingCalculatorPage(WebDriver driver) {
+
         super(driver);
     }
 
@@ -115,5 +124,19 @@ public class GoogleCloudPricingCalculatorPage extends GoogleCloudBasePage {
 
     public String getTotalCost() {
         return waitForWebElementVisible(textTotalCost).getText();
+    }
+
+    public GoogleCloudPricingCalculatorPage clickEmailEstimateButton() {
+        buttonEmailEstimate.click();
+        return this;
+    }
+
+    public GoogleCloudPricingCalculatorPage enterTempEMail(String tempEmail) {
+        waitForWebElementVisible(inputEmail).sendKeys(tempEmail);
+        return this;
+    }
+
+    public void sendEmail() {
+        buttonSendEmail.click();
     }
 }

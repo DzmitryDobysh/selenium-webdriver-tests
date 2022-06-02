@@ -1,25 +1,14 @@
 package pastebin.test;
 
 import pastebin.page.PasteBinMainPagePasteBin;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import pastebin.spec.BaseSpec;
 
-public class ICanWinTest {
-
-    protected WebDriver driver;
+public class ICanWinTest extends BaseSpec {
 
     protected static final String NEW_PASTE_TEXT = "Hello from WebDriver";
     protected static final String NEW_PASTE_TITLE = "helloweb";
     PasteBinMainPagePasteBin pasteBinMainPage;
-
-    @BeforeTest(alwaysRun = true)
-    public void browserSetup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
 
     @Test(description = "Enter all info for ICanWinTest")
     public void enterAllNeededInfoSimple() {
@@ -30,11 +19,5 @@ public class ICanWinTest {
                 .selectExpiration10M()
                 .typeInNewPasteTitle(NEW_PASTE_TITLE)
                 .submitNewPaste();
-    }
-
-    @AfterTest(alwaysRun = true)
-    public void browserExit() {
-        driver.quit();
-        driver = null;
     }
 }

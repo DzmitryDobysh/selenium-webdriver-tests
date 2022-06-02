@@ -1,23 +1,19 @@
 package pastebin.test;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pastebin.page.PasteBinMainPagePasteBin;
 import pastebin.page.PastebinSubmittedPastePagePasteBin;
+import pastebin.spec.BaseSpec;
 
 import java.time.Duration;
 
 
-public class BringItOnTest {
-
-    protected WebDriver driver;
-
+public class BringItOnTest extends BaseSpec {
     protected static final String NEW_PASTE_TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
             "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
             "git push origin master --force";
@@ -26,12 +22,6 @@ public class BringItOnTest {
     protected static final String EXPECTED_PASTE_SYNTAX = "Bash";
     PasteBinMainPagePasteBin pasteBinMainPage;
     PastebinSubmittedPastePagePasteBin pastebinSubmittedPastePage;
-
-    @BeforeTest(alwaysRun = true)
-    public void browserSetup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
 
     @Test(description = "Enter all info for BringItOnTest", groups = "main")
     public void enterAllNeededInfoExtended() {
@@ -67,11 +57,5 @@ public class BringItOnTest {
         String actualText = pastebinSubmittedPastePage.getSubmittedPasteText();
 
         Assert.assertEquals(actualText, NEW_PASTE_TEXT, "Submitted paste text doesn't match initial paste text");
-    }
-
-    @AfterTest(alwaysRun = true)
-    public void browserExit() {
-        driver.quit();
-        driver = null;
     }
 }
