@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import spec.BaseSpec;
 
 public class TempEmailPage extends BaseSpec {
+    //used another service instead of https://yopmail.com/en/ - probably got banned for no reason
     String TEMP_EMAIL_URL = "https://generator.email/email-generator";
 
     @FindBy(id = "email_ch_text")
