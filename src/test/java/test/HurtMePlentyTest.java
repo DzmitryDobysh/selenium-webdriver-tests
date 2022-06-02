@@ -8,7 +8,6 @@ import spec.TestSpec;
 
 public class HurtMePlentyTest extends TestSpec {
     String SEARCH_TERM_MAIN_PAGE = "Google Cloud Platform Pricing Calculator";
-    String PROVISIONING_MODEL = "Regular";
     String MANUALLY_CALCULATED_VALUE = "Total Estimated Cost: USD 1,081.20 per 1 month";
     GoogleCloudMainPage cloudMainPage;
     GoogleCloudPricingCalculatorPage cloudCalculatorPage;
