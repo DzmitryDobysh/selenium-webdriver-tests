@@ -1,10 +1,10 @@
-package pastebin.test;
+package test;
 
 import pastebin.page.PasteBinMainPagePasteBin;
 import org.testng.annotations.Test;
-import pastebin.spec.BaseSpec;
+import spec.TestSpec;
 
-public class ICanWinTest extends BaseSpec {
+public class ICanWinTest extends TestSpec {
 
     protected static final String NEW_PASTE_TEXT = "Hello from WebDriver";
     protected static final String NEW_PASTE_TITLE = "helloweb";

@@ -3,8 +3,9 @@ package pastebin.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import spec.BaseSpec;
 
-public class PasteBinMainPagePasteBin extends PasteBinBasePage {
+public class PasteBinMainPagePasteBin extends BaseSpec {
     private final String BASE_URL = "https://pastebin.com";
 
     @FindBy(id = "postform-text")

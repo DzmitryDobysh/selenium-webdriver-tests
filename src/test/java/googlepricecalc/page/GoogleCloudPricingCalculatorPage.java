@@ -1,10 +1,11 @@
-package pastebin.page;
+package googlepricecalc.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import spec.BaseSpec;
 
-public class GoogleCloudPricingCalculatorPage extends GoogleCloudBasePage {
+public class GoogleCloudPricingCalculatorPage extends BaseSpec {
     @FindBy(xpath = "//iframe[contains(@src, '/products/calculator')]")
     WebElement frameMain;
 
@@ -69,7 +70,7 @@ public class GoogleCloudPricingCalculatorPage extends GoogleCloudBasePage {
     @FindBy(xpath = "//h2/b[@class='ng-binding']")
     WebElement textTotalCost;
 
-    @FindBy(xpath = "//button[@aria-label='Email Estimate']")
+    @FindBy(xpath = "//button[@title='Email Estimate']")
     WebElement buttonEmailEstimate;
 
     @FindBy(xpath = "//input[@ng-model='emailQuote.user.email']")

@@ -3,8 +3,9 @@ package pastebin.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import spec.BaseSpec;
 
-public class PastebinSubmittedPastePagePasteBin extends PasteBinBasePage {
+public class PastebinSubmittedPastePagePasteBin extends BaseSpec {
     @FindBy(xpath = "//div[@class='left']/a[text()='Bash']")
     WebElement syntaxSubmittedPaste;
 

@@ -1,11 +1,11 @@
-package pastebin.spec;
+package spec;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class BaseSpec {
+public class TestSpec {
     protected WebDriver driver;
 
     @BeforeTest(alwaysRun = true)

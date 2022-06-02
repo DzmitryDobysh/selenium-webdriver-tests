@@ -1,17 +1,16 @@
-package pastebin.test;
+package test;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import pastebin.page.GoogleCloudMainPage;
-import pastebin.page.GoogleCloudPricingCalculatorPage;
-import pastebin.spec.BaseSpec;
+import googlepricecalc.page.GoogleCloudMainPage;
+import googlepricecalc.page.GoogleCloudPricingCalculatorPage;
+import spec.TestSpec;
 
-public class HurtMePlentyTest extends BaseSpec {
-    GoogleCloudMainPage cloudMainPage;
+public class HurtMePlentyTest extends TestSpec {
     String SEARCH_TERM_MAIN_PAGE = "Google Cloud Platform Pricing Calculator";
     String MANUALLY_CALCULATED_VALUE = "Total Estimated Cost: USD 1,081.20 per 1 month";
+    GoogleCloudMainPage cloudMainPage;
     GoogleCloudPricingCalculatorPage cloudCalculatorPage;
-
     @Test(description = "Fill in estimation form and compare Total Cost between autotest and manual")
     public void fillInEstimationForm() {
         cloudMainPage = new GoogleCloudMainPage(driver)

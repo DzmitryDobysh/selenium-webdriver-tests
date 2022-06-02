@@ -1,4 +1,4 @@
-package pastebin.test;
+package test;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
@@ -8,12 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pastebin.page.PasteBinMainPagePasteBin;
 import pastebin.page.PastebinSubmittedPastePagePasteBin;
-import pastebin.spec.BaseSpec;
+import spec.TestSpec;
 
 import java.time.Duration;
 
 
-public class BringItOnTest extends BaseSpec {
+public class BringItOnTest extends TestSpec {
     protected static final String NEW_PASTE_TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
             "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
             "git push origin master --force";
@@ -39,7 +39,7 @@ public class BringItOnTest extends BaseSpec {
 
     @Test(description = "Check if submitted paste title matches initial paste title", dependsOnGroups = "main")
     public void checkSubmittedPastePageTitle() {
-        WebElement titleSubmittedPaste = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(SUBMITTED_PASTE_TITLE_LOCATOR)));
+        WebElement titleSubmittedPaste = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(SUBMITTED_PASTE_TITLE_LOCATOR)));
         String actualPageTitle = titleSubmittedPaste.getText();
 
         Assert.assertEquals(actualPageTitle, NEW_PASTE_TITLE, "Submitted paste title doesn't match initial paste title");
