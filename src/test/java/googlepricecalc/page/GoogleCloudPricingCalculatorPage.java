@@ -23,12 +23,12 @@ public class GoogleCloudPricingCalculatorPage extends BaseSpec {
     @FindBy(xpath = "//md-option[@value='free']")
     WebElement itemSoftware;
 
-    @FindBy(xpath = "//md-select[@ng-model='listingCtrl.computeServer.class']")
+    @FindBy(xpath = "//md-select[@placeholder='VM Class']")
     WebElement dropdownClass;
     @FindBy(xpath = "//md-select-menu[@style]/descendant::md-option[@value='regular']")
     WebElement itemClass;
 
-    @FindBy(xpath = "//md-select[@name='series']")
+    @FindBy(xpath = "//md-select[@placeholder='Series']")
     WebElement dropdownSeries;
     @FindBy(xpath = "//md-option[@value='n1']")
     WebElement itemSeries;
@@ -67,6 +67,16 @@ public class GoogleCloudPricingCalculatorPage extends BaseSpec {
     @FindBy(xpath = "//button[@aria-label='Add to Estimate' and contains(@ng-click, 'addComputeServer')]")
     WebElement buttonAddToEstimate;
 
+    @FindBy(xpath = "//*[@id='compute']/md-list/md-list-item[4]")
+    WebElement textProvisioningModel;
+    @FindBy(xpath = "//*[@id='compute']/md-list/md-list-item[5]")
+    WebElement textInstanceType;
+    @FindBy(xpath = "//*[@id='compute']/md-list/md-list-item[1]")
+    WebElement textRegionName;
+    @FindBy(xpath = "//*[@id='compute']/md-list/md-list-item[7]")
+    WebElement textLocalSSD;
+    @FindBy(xpath = "//*[@id='compute']/md-list/md-list-item[3]")
+    WebElement textCommitmentTerm;
     @FindBy(xpath = "//h2/b[@class='ng-binding']")
     WebElement textTotalCost;
 
@@ -80,7 +90,6 @@ public class GoogleCloudPricingCalculatorPage extends BaseSpec {
     WebElement buttonSendEmail;
 
     public GoogleCloudPricingCalculatorPage(WebDriver driver) {
-
         super(driver);
     }
 
@@ -121,6 +130,26 @@ public class GoogleCloudPricingCalculatorPage extends BaseSpec {
     public GoogleCloudPricingCalculatorPage clickAddToEstimateButton() {
         buttonAddToEstimate.click();
         return this;
+    }
+
+    public String getProvisioningModel() {
+        return textProvisioningModel.getText();
+    }
+
+    public String getInstanceType() {
+        return textInstanceType.getText();
+    }
+
+    public String getRegionName() {
+        return textRegionName.getText();
+    }
+
+    public String getLocalSSD() {
+        return textLocalSSD.getText();
+    }
+
+    public String getCommitmentTerm() {
+        return textCommitmentTerm.getText();
     }
 
     public String getTotalCost() {
